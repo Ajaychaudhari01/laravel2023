@@ -1,0 +1,27 @@
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=root@123
+
+
+===============================
+
+Laravel admin and user resgistraion 
+
+1:- composer require laravel/jetstream
+
+2:php artisan jetstream:install livewire
+
+3:-npm install
+
+4:-npm run dev
+
+5:-php artisan migrate
+
+
+
+model
+casting

@@ -1,0 +1,35 @@
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=root@123
+
+https://laravel.com/docs/9.x#why-laravel
+https://laravel.com/docs/9.x/lifecycle
+
+Create a new project 
+============================
+composer create-project laravel/laravel:project name
+
+composer create-project laravel/laravel:exaple
+
+request life cycle
+============================ 
+each and every reuest is firstly visit the index file of project "public/inde.php" after that the http/console kernal is called.
+basicially Http kernal is called i.e."app/Http/Kernal.php" which checks and authenticated the request using the middileware defines.
+HTTP kernel extends a class i.e.  "Illuminate\Foundation\Http\Kernel" class, which defines an array of bootstrappers that will be run before the request is executed .These bootstrappers configure error handling, configure logging, detect the application environment, and perform other tasks that need to be done before the request is actually handled. Typically, these classes handle internal Laravel configuration that you do not need to worry about. after that kernal load the service provider i.e. "config/app.php all service provider is listed within service provider array .at last each and evry http request is served by Route service provider i.e. "app/Provider/RouteServiceProvider.php".
+after each service provider is served that request is sbmited to the thier respective Router after router called the belonging Contoller and then response is served.
+
+Index.php>kernal>serviceprovider>RouteServiceProvider>Route>controller
+
+Types of controlers=>
+	1=>Simple controller
+	cmd=>php artisan make:controller ConrollerName
+	
+	2=>Single Controller
+	cmd>php artisan make:controller Controllername --invokable
+	
+	3=>Resource Controller
+	cmd=>php artisan make:controller ControllerName --resource
+
